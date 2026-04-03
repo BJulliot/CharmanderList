@@ -200,37 +200,39 @@ export function CollectionClient({ meta }: { meta: MetaOptions }) {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
-      <header className="bg-gray-900 border-b border-gray-800 shadow-lg">
-        <div className="px-6 py-4 flex items-center justify-between">
+      <header className="bg-gray-950 border-b border-gray-800" style={{ background: "linear-gradient(180deg, #111827 0%, #0f172a 100%)" }}>
+        <div className="px-6 py-3.5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-2xl">🔥</span>
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center text-xl shrink-0" style={{ background: "linear-gradient(135deg, #E3350D, #FF6B35)" }}>
+              🔥
+            </div>
             <div>
-              <h1 className="text-xl font-bold text-white leading-tight">
+              <h1 className="text-lg font-bold leading-tight" style={{ background: "linear-gradient(90deg, #fff 0%, #f87171 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Salamèche Tracker
               </h1>
-              <p className="text-xs text-gray-500">Collection Pokémon TCG</p>
+              <p className="text-[11px] text-gray-600 tracking-wide">Pokémon TCG Collection</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={handleSync}
               disabled={syncing}
-              className="flex items-center gap-2 px-4 py-2 text-sm text-gray-200 bg-gray-700 hover:bg-gray-600 rounded-lg font-medium transition-all disabled:opacity-60 disabled:cursor-not-allowed active:scale-95"
+              className="flex items-center gap-2 px-3.5 py-2 text-sm text-gray-300 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
             >
               {syncing ? (
-                <span className="inline-block w-4 h-4 border-2 border-gray-400 border-t-white rounded-full animate-spin" />
+                <span className="inline-block w-3.5 h-3.5 border-2 border-gray-500 border-t-white rounded-full animate-spin" />
               ) : (
-                <span>🔄</span>
+                <span className="text-sm">🔄</span>
               )}
-              Sync nouvelles cartes
+              Sync
             </button>
             <button
               onClick={() => setShowAdd(true)}
-              className="flex items-center gap-2 px-4 py-2 text-sm text-white rounded-lg font-medium transition-all hover:opacity-90 active:scale-95"
-              style={{ backgroundColor: "#E3350D" }}
+              className="flex items-center gap-1.5 px-3.5 py-2 text-sm text-white rounded-lg font-medium transition-all hover:brightness-110 active:scale-95 shadow-lg"
+              style={{ background: "linear-gradient(135deg, #E3350D, #c62a0a)" }}
             >
-              <span className="text-base leading-none">+</span>
-              Ajouter une carte
+              <span className="text-base leading-none font-light">+</span>
+              Ajouter
             </button>
           </div>
         </div>
